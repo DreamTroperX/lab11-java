@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<f:view>
+    <h:head styleClass="head">
+        <title>All List</title>
+    </h:head>
+    <f:facet name="header">houseMap</f:facet>
+    <table>
+        <thead>
+        <tr>
+            <th colspan="6">Floor</th>
+        </tr>
+        <tr>
+            <th>index</th>
+            <th>Id</th>
+            <th>Number</th>
+            <th>Area</th>
+            <th>Number Of Rooms</th>
+            <th>Street</th>
+        </tr>
+        </thead>
+        <tbody>
+        <ui:repeat value="#{houseBean.apartmentListOfFloor().entrySet().toArray()}" var="entry">
+            <tr>
+                <td><h:outputText value="#{entry.key}" /></td>
+                <ui:repeat value="#{entry.value}" var="house">
+                    <td><h:outputText value="#{house.id}" /></td>
+                    <td><h:outputText value="#{house.num}" /></td>
+                    <td><h:outputText value="#{house.area}" /></td>
+                    <td><h:outputText value="#{house.numberOfRooms}" /></td>
+                    <td><h:outputText value="#{house.street}" /></td>
+                </ui:repeat>
+            </tr>
+        </ui:repeat>
+        </tbody>
+    </table>
+</f:view>
+
+</html>

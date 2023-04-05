@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<f:view >
+    <h:head >
+        <h:link rel="stylesheet" href="main.css" />
+        <title >Lab 11</title>
+    </h:head>
+    <h:body styleClass="body" >
+        <h1 style="color: darkred"> Lab 11</h1>
+        <h2 >Apartment</h2>
+        <h4>Welcome</h4>
+        <h:form styleClass="form">
+            <h:panelGrid styleClass="form">
+                <h:commandButton value="Show all" action="showAll" styleClass="button"/>
+                <h:outputLabel value="Number of Rooms:" for="numberOfRooms"/>
+                <h:inputText value="#{houseBean.numberOfRooms}" id="numberOfRooms"/>
+                <h:commandButton value="Number of Rooms" action="listOfNumberOfRooms" styleClass="button"/>
+                <h:outputLabel value="From floor:" for="fromFloor"/>
+                <h:inputText value="#{houseBean.fromFloor}" id="fromFloor"/>
+                <h:outputLabel value="To floor:" for="toFloor"/>
+                <h:inputText value="#{houseBean.toFloor}" id="toFloor"/>
+                <h:commandButton value="Number of Rooms and Floor Range" action="listOfNumberOFRoomsAndFloors" styleClass="button"/>
+                <h:outputLabel value="Area:" for="area"/>
+                <h:inputText value="#{houseBean.area}" id="area"/>
+                <h:commandButton value="Area bigger than *" action="listOfAreaBigger" styleClass="button"/>
+                <h:commandButton value="In area order" action="listOfAreaOrder" styleClass="button"/>
+                <h:commandButton value="List of floors" action="listOfFloors" styleClass="button"/>
+                <h:commandButton value="List of apartment for each floors" action="listOfFloorsApartment" styleClass="button"/>
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+</f:view>
+</html>
